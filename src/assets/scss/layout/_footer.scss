@@ -1,0 +1,85 @@
+.footer {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 25px;
+  background: rgba(11, 38, 56, 0.8);
+  color: $white;
+  &::before {
+    @include ovl;
+    background-color: #163951;
+  }
+  &__logo {
+    display: block;
+    margin-bottom: 50px;
+    width: max-content;
+    svg {
+      fill: #fff;
+    }
+  }
+  &__caption {
+    margin-bottom: 18px;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+  }
+  &__req {
+    letter-spacing: 0.02em;
+    line-height: 1.875;
+  }
+  &__dev {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    margin: 0 auto;
+    svg {
+      fill: #fff;
+      margin-bottom: 10px;
+      @include ease;
+    }
+    span {
+      display: block;
+      color: #fff;
+      font-size: 12px;
+      @include ease;
+    }
+    &:hover svg {
+      fill: $jeans;
+    }
+    &:hover span {
+      color: $jeans;
+    }
+  }
+  &__email {
+    span {
+      color: $white;
+      @include ease;
+    }
+    svg {
+      stroke: $white;
+    }
+    &:hover {
+      span {
+        color: $jeans;
+      }
+    }
+  }
+  &__hr {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 49.5%, rgba(255, 255, 255, 0) 100%);
+  }
+  &__policy {
+    font-size: 14px;
+    text-align: center;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+
+
