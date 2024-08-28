@@ -58,4 +58,48 @@ $(function () {
       }
     }
   });
+  var expertiseSlider = new Swiper(".js-expertise-slider", {
+    speed: 900,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".js-expertise-slider-next",
+      prevEl: ".js-expertise-slider-prev"
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1
+      },
+      768: {
+        slidesPerView: 2
+      },
+      960: {
+        slidesPerView: 3
+      }
+    }
+  });
+});
+
+//toggle menu
+$(function () {
+  $('.js-open-mobile-menu').on('click', function () {
+    $(this).toggleClass('is-active');
+    $('.top-nav__wrapper').toggleClass('is-open');
+    $('body').toggleClass('is-loading');
+  });
+});
+$('.mobile-help__content').on('shown.bs.collapse', function () {
+  $(this).parent().addClass('is-active');
+});
+$('.mobile-help__content').on('hidden.bs.collapse', function () {
+  $(this).parent().removeClass('is-active');
+});
+$(function () {
+  $(".js-button-anchor").click(function (e) {
+    e.preventDefault();
+    var aid = $(this).attr("data-to");
+    $('html,body').animate({
+      scrollTop: $(aid).offset().top
+    }, 1300);
+  });
 });

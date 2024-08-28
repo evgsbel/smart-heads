@@ -1,7 +1,7 @@
 <header class="header">
   <div class="container-fluid container_big">
     <div class="row align-items-center">
-      <div class="col-lg-3">
+      <div class="col-md-3  col-8 order-1 order-md-0">
         <a href="#" class="logo header__logo">
           <svg class="logo__svg"  width="193" height="25">
             <use xlink:href="#logo"></use>
@@ -9,23 +9,40 @@
           <p class="logo__text">Партнер в области IT-исследований</p>
         </a>
       </div>
-      <div class="col-lg-6">
-        <nav class="nav header__nav top-nav">
-          <ul class="top-nav__list">
-            <li class="top-nav__item"><a href="" class="top-nav__link">Преимущества</a></li>
-            <li class="top-nav__item"><a href="" class="top-nav__link">Услуги</a></li>
-            <li class="top-nav__item"><a href="" class="top-nav__link">Исследования</a></li>
-            <li class="top-nav__item"><a href="" class="top-nav__link">Кейсы</a></li>
-            <li class="top-nav__item"><a href="" class="top-nav__link">Контакты</a></li>
-          </ul>
-        </nav>
+      <div class="col-lg-6 col-md-7 col-2 order-0 order-md-1 position-static">
+        <button class="btn-reset burger js-open-mobile-menu">
+          <svg width="28" height="17">
+            <use xlink:href="#icon-burger"></use>
+          </svg>
+          <svg width="28" height="17">
+            <use xlink:href="#icon-close"></use>
+          </svg>
+        </button>
+        <div class="top-nav__wrapper">
+          <nav class="nav header__nav top-nav">
+            <ul class="top-nav__list">
+              <li class="top-nav__item"><a href="" class="top-nav__link js-button-anchor" data-to="#adv">Преимущества</a></li>
+              <li class="top-nav__item"><a href="" class="top-nav__link js-button-anchor" data-to="#service">Услуги</a></li>
+              <li class="top-nav__item"><a href="" class="top-nav__link js-button-anchor" data-to="#art">Исследования</a></li>
+              <li class="top-nav__item"><a href="" class="top-nav__link js-button-anchor" data-to="#case-in">Кейсы</a></li>
+              <li class="top-nav__item"><a href="" class="top-nav__link js-button-anchor" data-to="#footer">Контакты</a></li>
+            </ul>
+          </nav>
+          <a href="" class="header__email">
+            <svg width="23" height="18">
+              <use xlink:href="#icon-mail"></use>
+            </svg>
+            <span class="">smart-heads@почта.ru</span>
+          </a>
+          <a href="tel:89451234567" class="top-nav__phone">+7 (945) 123 - 45 - 67</a>
+        </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-2 order-2">
         <a href="" class="header__email">
           <svg width="23" height="18">
             <use xlink:href="#icon-mail"></use>
           </svg>
-          <span>smart-heads@почта.ru</span>
+          <span class="header__email--title">smart-heads@почта.ru</span>
         </a>
       </div>
     </div>

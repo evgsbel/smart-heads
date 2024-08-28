@@ -4,6 +4,9 @@
   padding-bottom: 25px;
   background: rgba(11, 38, 56, 0.8);
   color: $white;
+  @include r(768) {
+    padding-top: 40px;
+  }
   &::before {
     @include ovl;
     background-color: #163951;
@@ -12,6 +15,11 @@
     display: block;
     margin-bottom: 50px;
     width: max-content;
+    @include r(768) {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
     svg {
       fill: #fff;
     }
@@ -31,6 +39,9 @@
     width: max-content;
     max-width: 100%;
     margin: 0 auto;
+    @include r(768) {
+      margin: 0;
+    }
     svg {
       fill: #fff;
       margin-bottom: 10px;
@@ -68,6 +79,9 @@
     margin-bottom: 25px;
     height: 1px;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 49.5%, rgba(255, 255, 255, 0) 100%);
+    @include r(768) {
+      margin: 30px 0;
+    }
   }
   &__policy {
     font-size: 14px;
@@ -75,6 +89,22 @@
     text-decoration: underline;
     &:hover {
       text-decoration: none;
+    }
+  }
+  &__email {
+    @include r(768) {
+      justify-content: flex-start;
+      margin-bottom: 14px;
+    }
+  }
+  &__phone {
+    display: none;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    @include r(768) {
+      display: block;
     }
   }
 }

@@ -7,6 +7,9 @@
   left: 0;
   width: 100%;
   z-index: 50;
+  @include r(768) {
+    padding: 14px 0;
+  }
   &__email {
     display: flex;
     align-items: center;
@@ -20,9 +23,16 @@
       font-size: 1.25rem;
       letter-spacing: 1px;
     }
+    &--title {
+      @include r(960) {
+        display: none;
+      }
+    }
     svg {
       stroke: $black;
       @include ease;
+      flex: 0 0 auto;
+
     }
     &:hover {
       svg {
@@ -33,15 +43,27 @@
 }
 
 .logo {
+  @include r(960) {
+    margin: 0 auto;
+    display: block;
+    width: max-content;
+    max-width: 100%;
+  }
   &__svg {
     margin-bottom: 10px;
     fill: #000;
+    max-width: 100%;
     @include ease;
   }
   &__text {
     font-size: 12px;
     line-height: 1;
     color: #6B7F8B;
+    @include r(576) {
+      font-size: 10px;
+      text-align: center;
+    }
+
   }
   &:hover {
     svg {
@@ -51,17 +73,127 @@
 }
 
 .top-nav {
+  position: relative;
+
   &__list {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
+    @include r(768) {
+      padding: 65px 0;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px 0;
+      box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px);
+      background-color: #fff;
+    }
   }
   &__link {
+    position: relative;
+    z-index: 20;
     @include ease;
     &:hover {
       color: $jeans;
     }
+    @include r(768) {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  &__wrapper {
+    @include r(768) {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 100%;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: .3s all ease;
+      transition: .3s all ease;
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px);
+
+      &.is-open {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      &::before {
+        background-color: #fff;
+        position: absolute;
+        content: "";
+        width: 1920px;
+        height: 100vh;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+
+        @include r(768) {
+          content: '';
+        }
+      }
+    }
+    .header__email {
+      display: none;
+      position: relative;
+      z-index: 10;
+      margin-top: 50px;
+      margin-bottom: 15px;
+      justify-content: center;
+      @include r(768) {
+        display: flex;
+      }
+      span {
+        display: block;
+        color: #000;
+      }
+    }
+  }
+  &__phone {
+    display: none;
+    position: relative;
+    z-index: 30;
+    @include r(768) {
+      display: block;
+      text-align: center;
+      font-weight: 700;
+      font-size: 16px;
+    }
   }
 }
 
+.burger {
+  display: none;
+  position: relative;
+  width: 28px;
+  height: 17px;
+  @include r(768) {
+    display: block;
+  }
+  svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+    &:last-child {
+      opacity: 0;
+    }
+  }
+  &.is-active {
+    svg:first-child {
+      opacity: 0;
+    }
+    svg:last-child {
+      opacity: 1;
+    }
+  }
+}
